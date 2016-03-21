@@ -68,12 +68,77 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/* line 24, ../sass/main.scss */
+/* line 136, sprites/*.png */
+.sprites-sprite, .sprites-icon-add, .sprites-icon-cross1, .sprites-icon-cross2, .sprites-icon-ketang, .sprites-icon-left, .sprites-icon-mooc, .sprites-icon-play, .sprites-icon-right, .sprites-icon-weibo, .sprites-icon-zoom, .sprites-logo-ETU {
+  background-image: url('../_images/sprites-se68d39e41d.png');
+  background-repeat: no-repeat;
+}
+
+/* line 84, ../../../../../../../../../usr/local/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-icon-add {
+  background-position: -70px -19px;
+}
+
+/* line 84, ../../../../../../../../../usr/local/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-icon-cross1 {
+  background-position: 0 -38px;
+}
+
+/* line 84, ../../../../../../../../../usr/local/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-icon-cross2 {
+  background-position: -9px -38px;
+}
+
+/* line 84, ../../../../../../../../../usr/local/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-icon-ketang {
+  background-position: 0 -214px;
+}
+
+/* line 84, ../../../../../../../../../usr/local/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-icon-left {
+  background-position: -27px -38px;
+}
+
+/* line 84, ../../../../../../../../../usr/local/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-icon-mooc {
+  background-position: 0 -134px;
+}
+
+/* line 84, ../../../../../../../../../usr/local/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-icon-play {
+  background-position: 0 -54px;
+}
+
+/* line 84, ../../../../../../../../../usr/local/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-icon-right {
+  background-position: -19px -38px;
+}
+
+/* line 84, ../../../../../../../../../usr/local/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-icon-weibo {
+  background-position: -35px -38px;
+}
+
+/* line 84, ../../../../../../../../../usr/local/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-icon-zoom {
+  background-position: 0 0;
+}
+/* line 59, ../../../../../../../../../usr/local/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-icon-zoom:hover, .sprites-icon-zoom.icon-zoom-hover {
+  background-position: -19px 0;
+}
+
+/* line 84, ../../../../../../../../../usr/local/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-logo-ETU {
+  background-position: 0 -19px;
+}
+
+/* line 33, ../sass/main.scss */
 html {
   font-size: 10px;
 }
 
-/* line 28, ../sass/main.scss */
+/* line 37, ../sass/main.scss */
 body {
   font-family: "Microsoft Yahei","微软雅黑", STXihei, "华文细黑", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -81,53 +146,54 @@ body {
   color: #333333;
 }
 
-/* line 38, ../sass/main.scss */
+/* line 47, ../sass/main.scss */
 button {
   background-color: transparent;
   border-style: none;
   padding: 0;
   margin: 0;
+  cursor: pointer;
 }
 
-/* line 47, ../sass/main.scss */
+/* line 56, ../sass/main.scss */
 a:link, a:visited {
   text-decoration: none;
   color: #39a030;
 }
 
-/* line 53, ../sass/main.scss */
+/* line 62, ../sass/main.scss */
 a:hover {
   text-decoration: underline;
 }
 
-/* line 58, ../sass/main.scss */
+/* line 67, ../sass/main.scss */
 i {
   display: inline-block;
 }
 
-/* line 63, ../sass/main.scss */
+/* line 72, ../sass/main.scss */
 .reminder {
   font-size: 1.2rem;
   background-color: #f3f3f3;
 }
-/* line 68, ../sass/main.scss */
+/* line 77, ../sass/main.scss */
 .reminder div {
   width: 960px;
   margin: 0 auto;
 }
 @media only screen and (min-width: 1205px) {
-  /* line 68, ../sass/main.scss */
+  /* line 77, ../sass/main.scss */
   .reminder div {
     width: 1205px;
   }
 }
-/* line 81, ../sass/main.scss */
+/* line 90, ../sass/main.scss */
 .reminder p {
   display: inline-block;
   vertical-align: middle;
   margin: 1.2rem 0;
 }
-/* line 88, ../sass/main.scss */
+/* line 97, ../sass/main.scss */
 .reminder button {
   float: right;
   vertical-align: middle;
@@ -135,14 +201,14 @@ i {
   font-size: 1.2rem;
   color: #333333;
 }
-/* line 96, ../sass/main.scss */
+/* line 105, ../sass/main.scss */
 .reminder button i {
-  width: 1rem;
-  height: 1rem;
+  width: 0.9rem;
+  height: 0.9rem;
   margin: 0 0.6rem 0 0;
 }
 
-/* line 107, ../sass/main.scss */
+/* line 116, ../sass/main.scss */
 header {
   width: 960px;
   margin: 0 auto;
@@ -152,26 +218,36 @@ header {
   /*for inline-block*/
 }
 @media only screen and (min-width: 1205px) {
-  /* line 107, ../sass/main.scss */
+  /* line 116, ../sass/main.scss */
   header {
     width: 1205px;
   }
 }
-/* line 120, ../sass/main.scss */
+/* line 129, ../sass/main.scss */
+header .sprites-logo-ETU {
+  display: inline-block;
+  width: 7rem;
+  height: 1.9rem;
+  vertical-align: middle;
+  margin-right: 1.2rem;
+}
+/* line 138, ../sass/main.scss */
 header h1 {
   display: inline-block;
   vertical-align: middle;
+  margin-right: 3rem;
   font: 22px/22px "Hiragino Sans GB","Microsoft YaHei","微软雅黑", Helvetica, sans-serif;
 }
-/* line 127, ../sass/main.scss */
+/* line 148, ../sass/main.scss */
 header p {
   display: inline-block;
   vertical-align: middle;
   font: 1.2rem/1.2rem "SimSun","宋体","Microsoft YaHei","微软雅黑", Helvetica, sans-serif;
 }
-/* line 134, ../sass/main.scss */
+/* line 155, ../sass/main.scss */
 header button {
   vertical-align: middle;
+  margin-right: 1.4rem;
   padding: 0.5rem 0.9rem;
   color: white;
   background-color: #39a030;
@@ -179,19 +255,65 @@ header button {
   -webkit-border-radius: 2px;
   border-radius: 2px;
 }
-/* line 143, ../sass/main.scss */
+/* line 164, ../sass/main.scss */
+header button i {
+  display: inline-block;
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-right: 0.4rem;
+}
+/* line 173, ../sass/main.scss */
 header nav {
   display: inline-block;
   float: right;
   color: #666666;
 }
-/* line 148, ../sass/main.scss */
+/* line 178, ../sass/main.scss */
 header nav ul {
   display: inline-block;
 }
-/* line 152, ../sass/main.scss */
+/* line 182, ../sass/main.scss */
+header nav ul i {
+  margin-left: 3rem;
+  margin-right: 1.4rem;
+  height: 1.6rem;
+  width: 1.6rem;
+}
+/* line 190, ../sass/main.scss */
 header nav li {
   font: 1.6rem/1.6rem "Hiragino Sans GB","Microsoft YaHei","微软雅黑", Helvetica, sans-serif;
   display: inline;
   margin-left: 5.6rem;
+}
+
+/* start of slide */
+/* line 202, ../sass/main.scss */
+.slide {
+  position: relative;
+  height: 46rem;
+  width: 100%;
+  background-image: url('../_images/banner1.jpg?1427209844');
+  background-size: cover;
+  background-position: center;
+  font-size: 0;
+  text-align: center;
+}
+/* line 213, ../sass/main.scss */
+.slide .pointSet {
+  position: absolute;
+  display: inline-block;
+  bottom: 2rem;
+  text-align: center;
+}
+/* line 220, ../sass/main.scss */
+.slide i {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  -moz-border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  border-radius: 1rem;
+  background-color: #ffffff;
+  cursor: pointer;
+  margin: 0 0.6rem;
 }

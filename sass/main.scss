@@ -5,6 +5,12 @@
 
 @import "compass/reset";
 @import "compass/css3/border-radius";
+@import "compass/utilities";
+
+//smart layout of sprite
+$sprites-layout: smart;
+@import "sprites/*.png";
+@include all-sprites-sprites;
 
 // mixin for media query
 @mixin respond-to($breakpoint) 
@@ -13,6 +19,9 @@
 }
 
 // mixin for border-radius
+
+
+
 
 
 // breakpoint
@@ -41,7 +50,7 @@ button /*reset button*/
 	border-style:none;
 	padding:0;
 	margin:0;
-
+	cursor: pointer;
 }
 
 a:link, a:visited
@@ -95,8 +104,8 @@ i
 
 		i
 		{
-			width: 1rem;
-			height:1rem;
+			width: 0.9rem;
+			height:0.9rem;
 			margin:0 0.6rem 0 0;
 		}
 	}
@@ -117,11 +126,23 @@ header
 		width:$widewidth+px;
 	}
 
+	.sprites-logo-ETU
+	{
+			display: inline-block;
+			width: 7rem;
+			height:1.9rem;
+			vertical-align: middle;
+			margin-right:1.2rem;
+	}
+
 	h1
 	{
 		display: inline-block;
 		vertical-align: middle;
+		margin-right: 3rem;
 		font:22px/22px "Hiragino Sans GB","Microsoft YaHei","微软雅黑", Helvetica, sans-serif;
+
+
 	}
 
 	p
@@ -134,10 +155,19 @@ header
 	button
 	{
 		vertical-align: middle;
+		margin-right: 1.4rem;
 		padding: 0.5rem 0.9rem;
 		color:white;
 		background-color:$netGreen;
 		@include border-radius(2px);
+
+		i
+		{
+			display: inline-block;
+			width: 0.8rem;
+			height:0.8rem;
+			margin-right: 0.4rem;
+		}
 	}
 
 	nav
@@ -148,12 +178,53 @@ header
 		ul
 		{
 			display: inline-block;
+
+			i
+			{
+				margin-left:3rem;
+				margin-right:1.4rem;
+				height: 1.6rem;
+				width: 1.6rem;
+			}
 		}
 		li
 		{
 			font:1.6rem/1.6rem "Hiragino Sans GB","Microsoft YaHei","微软雅黑", Helvetica, sans-serif;
 			display: inline;
 			margin-left:5.6rem;
+
+			
 		}
+	}
+}
+
+/* start of slide */
+.slide
+{
+	position:relative;
+	height:46rem;
+	width:100%;
+	background-image:image-url("banner1.jpg");
+	background-size: cover;
+	background-position: center;
+	font-size:0;
+	text-align:center;
+
+	.pointSet
+	{
+		position: absolute;
+		display: inline-block;
+		bottom: 2rem;
+		text-align: center;
+	}
+	i
+	{
+		display: inline-block;
+		width: 1rem;
+		height: 1rem;
+		@include border-radius(1rem);
+		background-color:#ffffff;
+		cursor: pointer;
+		margin:0 0.6rem;
 	}
 }
