@@ -21,7 +21,21 @@ $sprites-layout: smart;
 // mixin for border-radius
 
 
+@mixin clearfix
+{
 
+	&:before, &:after
+	{
+		content: "";
+  		display: table;
+	}
+
+	&:after
+	{
+		clear:both;
+	}
+	zoom:1;
+}
 
 
 // breakpoint
@@ -160,6 +174,11 @@ header
 		color:white;
 		background-color:$netGreen;
 		@include border-radius(2px);
+		
+		&:hover
+		{
+			background-color:#2fb556;
+		}
 
 		i
 		{
@@ -185,6 +204,7 @@ header
 				margin-right:1.4rem;
 				height: 1.6rem;
 				width: 1.6rem;
+
 			}
 		}
 		li
@@ -192,7 +212,17 @@ header
 			font:1.6rem/1.6rem "Hiragino Sans GB","Microsoft YaHei","微软雅黑", Helvetica, sans-serif;
 			display: inline;
 			margin-left:5.6rem;
+			
+			a:link, a:visited
+			{
+				color: #666666;
+			}
 
+			a:hover
+			{
+				color:$netGreen;
+				text-decoration: none;
+			}			
 			
 		}
 	}
@@ -203,12 +233,21 @@ header
 {
 	position:relative;
 	height:46rem;
-	width:100%;
+	width:$smallwidth+px;
 	background-image:image-url("banner1.jpg");
 	background-size: cover;
 	background-position: center;
 	font-size:0;
 	text-align:center;
+	
+	@include respond-to($smallwidth)
+	{
+		width: $widewidth+px;
+	}
+	@include respond-to($widewidth)
+	{
+		width: 100%;
+	}
 
 	.pointSet
 	{
@@ -226,5 +265,64 @@ header
 		background-color:#ffffff;
 		cursor: pointer;
 		margin:0 0.6rem;
+	}
+}
+
+/*start of columns*/
+.three-columns
+{
+	width:960px;
+	margin:6rem auto;
+	@include respond-to($widewidth)
+	{
+		width:$widewidth+px;
+	}
+	
+	@include clearfix;
+
+	section
+	{
+		float:left;
+		margin-right:7rem;
+
+		&:last-of-type
+		{
+			margin-right:0;
+
+		}
+		div
+		{
+			display: inline-block;
+		}
+
+		a
+		{
+			font-size: 1.4rem;
+		}
+	}
+	i
+	{
+		display: inline-block;
+		float: left;
+		width: 8rem;
+		height: 8rem;
+		margin-right:2rem;
+	}
+	h2
+	{
+		font-size: 2.2rem;
+		margin-bottom: 2rem;
+	}
+	p
+	{
+		width: 17rem;
+		margin-bottom: 5.2rem;
+		font-size: 1.4rem;
+		line-height: 2.4rem;
+		color:#666666;
+		@include respond-to($widewidth)
+		{
+			width: 25rem;
+		}
 	}
 }
