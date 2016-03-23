@@ -4,7 +4,7 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 @import "compass/reset";
-@import "compass/css3/border-radius";
+@import "compass/css3";
 @import "compass/utilities";
 
 //smart layout of sprite
@@ -339,7 +339,7 @@ header
 }
 
 /*list of images*/
-.images
+.imagesList
 {
 	width:1616px;
 	margin: 0 auto;
@@ -355,4 +355,123 @@ header
 			margin-right:0;
 		}
 	}
+}
+
+
+.ajaxWrapper
+{
+	background-color:#f8f8f8;
+}
+.ajaxPart
+{
+	width:$smallwidth+px;
+	margin:0 auto;
+	padding-top:84px;
+	padding-bottom:120px;
+	
+	@include respond-to($widewidth)
+	{
+		width:$widewidth+px;
+	}
+
+	@include clearfix;
+}
+
+/*course part*/
+
+
+.courseList
+{
+	width:735px;
+	margin-right:2px;
+	float:left;
+
+	@include respond-to($widewidth)
+	{
+		width: 980px;
+	}
+	
+	section
+	{
+		background-color:#ffffff;
+		width: 225px;
+		font-size: 1.2rem;
+		@include box-shadow(rgba(6, 0, 1, 0.2) 0px 1px 1px 0px);
+		
+		img
+		{
+			width: 223px;
+			margin: 1px;
+
+		}
+		
+		.class-textWrapper
+		{
+			padding: 0.9rem 0.5rem 1.1rem;
+		}
+		.class-category
+		{
+			margin: 1rem 0;
+			color: #999999;
+		}
+
+		.class-numberOfStudent
+		{
+			display: inline-block;
+			font-size: 1rem;
+			margin-bottom: 1rem;
+			padding:3px;
+			
+			border-style:solid;
+			border-width:thin;
+			border-color:#dddddd;
+			@include border-radius(2px);
+
+			i
+			{
+				display: inline-block;
+				width: 9px;
+				height:11px;
+				margin-right: 5px;
+				vertical-align: middle;
+			}
+
+			span
+			{
+				vertical-align: middle;
+			}
+		}
+
+		.class-price
+		{
+			color:#ff3f00;
+
+		}
+	}
+}
+
+.courseTab
+{
+	font-size:2rem;
+	color: #666666;
+	margin-bottom:29px;
+	padding:1.5rem 5.8rem;
+	background-color:#ffffff;
+	&.current
+	{
+		background-color:$netGreen;
+		color: #ffffff;
+	}
+  
+  	@include box-shadow(rgba(6, 0, 1, 0.2) 0px 1px 1px 0px);
+
+
+}
+
+/*end of course*/
+
+aside.recommend
+{
+	float:right;
+	width: 223px;
 }

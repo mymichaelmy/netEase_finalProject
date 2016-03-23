@@ -68,9 +68,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/* line 136, sprites/*.png */
-.sprites-sprite, .sprites-icon-add, .sprites-icon-cross1, .sprites-icon-cross2, .sprites-icon-ketang, .sprites-icon-left, .sprites-icon-mooc, .sprites-icon-play, .sprites-icon-right, .sprites-icon-weibo, .sprites-icon-zoom, .sprites-logo-ETU {
-  background-image: url('../_images/sprites-se68d39e41d.png');
+/* line 144, sprites/*.png */
+.sprites-sprite, .sprites-icon-add, .sprites-icon-cross1, .sprites-icon-cross2, .sprites-icon-ketang, .sprites-icon-left, .sprites-icon-mooc, .sprites-icon-play, .sprites-icon-profile, .sprites-icon-right, .sprites-icon-weibo, .sprites-icon-zoom, .sprites-logo-ETU {
+  background-image: url('../_images/sprites-s6838f1306e.png');
   background-repeat: no-repeat;
 }
 
@@ -96,7 +96,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 /* line 84, ../../../../../../../../../usr/local/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
 .sprites-icon-left {
-  background-position: -27px -38px;
+  background-position: -28px -38px;
 }
 
 /* line 84, ../../../../../../../../../usr/local/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
@@ -110,13 +110,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 
 /* line 84, ../../../../../../../../../usr/local/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
-.sprites-icon-right {
+.sprites-icon-profile {
   background-position: -19px -38px;
 }
 
 /* line 84, ../../../../../../../../../usr/local/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-icon-right {
+  background-position: -36px -38px;
+}
+
+/* line 84, ../../../../../../../../../usr/local/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
 .sprites-icon-weibo {
-  background-position: -35px -38px;
+  background-position: -44px -38px;
 }
 
 /* line 84, ../../../../../../../../../usr/local/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
@@ -421,18 +426,137 @@ header nav li a:hover {
 
 /*list of images*/
 /* line 342, ../sass/main.scss */
-.images {
+.imagesList {
   width: 1616px;
   margin: 0 auto;
   font-size: 0;
   text-align: center;
 }
 /* line 348, ../sass/main.scss */
-.images img {
+.imagesList img {
   display: inline-block;
   margin-right: 4px;
 }
 /* line 353, ../sass/main.scss */
-.images img:last-of-type {
+.imagesList img:last-of-type {
   margin-right: 0;
+}
+
+/* line 361, ../sass/main.scss */
+.ajaxWrapper {
+  background-color: #f8f8f8;
+}
+
+/* line 365, ../sass/main.scss */
+.ajaxPart {
+  width: 960px;
+  margin: 0 auto;
+  padding-top: 84px;
+  padding-bottom: 120px;
+  zoom: 1;
+}
+@media only screen and (min-width: 1205px) {
+  /* line 365, ../sass/main.scss */
+  .ajaxPart {
+    width: 1205px;
+  }
+}
+/* line 27, ../sass/main.scss */
+.ajaxPart:before, .ajaxPart:after {
+  content: "";
+  display: table;
+}
+/* line 33, ../sass/main.scss */
+.ajaxPart:after {
+  clear: both;
+}
+
+/*course part*/
+/* line 383, ../sass/main.scss */
+.courseList {
+  width: 735px;
+  margin-right: 2px;
+  float: left;
+}
+@media only screen and (min-width: 1205px) {
+  /* line 383, ../sass/main.scss */
+  .courseList {
+    width: 980px;
+  }
+}
+/* line 394, ../sass/main.scss */
+.courseList section {
+  background-color: #ffffff;
+  width: 225px;
+  font-size: 1.2rem;
+  -moz-box-shadow: rgba(6, 0, 1, 0.2) 0px 1px 1px 0px;
+  -webkit-box-shadow: rgba(6, 0, 1, 0.2) 0px 1px 1px 0px;
+  box-shadow: rgba(6, 0, 1, 0.2) 0px 1px 1px 0px;
+}
+/* line 401, ../sass/main.scss */
+.courseList section img {
+  width: 223px;
+  margin: 1px;
+}
+/* line 408, ../sass/main.scss */
+.courseList section .class-textWrapper {
+  padding: 0.9rem 0.5rem 1.1rem;
+}
+/* line 412, ../sass/main.scss */
+.courseList section .class-category {
+  margin: 1rem 0;
+  color: #999999;
+}
+/* line 418, ../sass/main.scss */
+.courseList section .class-numberOfStudent {
+  display: inline-block;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  padding: 3px;
+  border-style: solid;
+  border-width: thin;
+  border-color: #dddddd;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+/* line 430, ../sass/main.scss */
+.courseList section .class-numberOfStudent i {
+  display: inline-block;
+  width: 9px;
+  height: 11px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+/* line 439, ../sass/main.scss */
+.courseList section .class-numberOfStudent span {
+  vertical-align: middle;
+}
+/* line 445, ../sass/main.scss */
+.courseList section .class-price {
+  color: #ff3f00;
+}
+
+/* line 453, ../sass/main.scss */
+.courseTab {
+  font-size: 2rem;
+  color: #666666;
+  margin-bottom: 29px;
+  padding: 1.5rem 5.8rem;
+  background-color: #ffffff;
+  -moz-box-shadow: rgba(6, 0, 1, 0.2) 0px 1px 1px 0px;
+  -webkit-box-shadow: rgba(6, 0, 1, 0.2) 0px 1px 1px 0px;
+  box-shadow: rgba(6, 0, 1, 0.2) 0px 1px 1px 0px;
+}
+/* line 460, ../sass/main.scss */
+.courseTab.current {
+  background-color: #39a030;
+  color: #ffffff;
+}
+
+/*end of course*/
+/* line 473, ../sass/main.scss */
+aside.recommend {
+  float: right;
+  width: 223px;
 }
