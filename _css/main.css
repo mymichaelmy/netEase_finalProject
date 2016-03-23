@@ -342,16 +342,24 @@ header nav li a:hover {
   cursor: pointer;
   margin: 0 0.6rem;
 }
+/* line 269, ../sass/main.scss */
+.slide i.current {
+  background-color: #333333;
+}
+/* line 274, ../sass/main.scss */
+.slide i:hover {
+  background-color: #333333;
+}
 
 /*start of columns*/
-/* line 272, ../sass/main.scss */
+/* line 282, ../sass/main.scss */
 .three-columns {
   width: 960px;
   margin: 6rem auto;
   zoom: 1;
 }
 @media only screen and (min-width: 1205px) {
-  /* line 272, ../sass/main.scss */
+  /* line 282, ../sass/main.scss */
   .three-columns {
     width: 1205px;
   }
@@ -365,47 +373,66 @@ header nav li a:hover {
 .three-columns:after {
   clear: both;
 }
-/* line 283, ../sass/main.scss */
+/* line 293, ../sass/main.scss */
 .three-columns section {
   float: left;
   margin-right: 7rem;
 }
-/* line 288, ../sass/main.scss */
+/* line 298, ../sass/main.scss */
 .three-columns section:last-of-type {
   margin-right: 0;
 }
-/* line 293, ../sass/main.scss */
+/* line 303, ../sass/main.scss */
 .three-columns section div {
   display: inline-block;
 }
-/* line 298, ../sass/main.scss */
+/* line 308, ../sass/main.scss */
 .three-columns section a {
   font-size: 1.4rem;
 }
-/* line 303, ../sass/main.scss */
+/* line 313, ../sass/main.scss */
 .three-columns i {
   display: inline-block;
   float: left;
   width: 8rem;
   height: 8rem;
   margin-right: 2rem;
+  margin-top: 0.6rem;
 }
-/* line 311, ../sass/main.scss */
+/* line 322, ../sass/main.scss */
 .three-columns h2 {
   font-size: 2.2rem;
   margin-bottom: 2rem;
 }
-/* line 316, ../sass/main.scss */
+/* line 327, ../sass/main.scss */
 .three-columns p {
-  width: 17rem;
+  width: 17.2rem;
   margin-bottom: 5.2rem;
   font-size: 1.4rem;
   line-height: 2.4rem;
   color: #666666;
 }
 @media only screen and (min-width: 1205px) {
-  /* line 316, ../sass/main.scss */
+  /* line 327, ../sass/main.scss */
   .three-columns p {
     width: 25rem;
   }
+}
+
+/*list of images*/
+/* line 342, ../sass/main.scss */
+.images {
+  width: 1616px;
+  margin: 0 auto;
+  font-size: 0;
+  text-align: center;
+}
+/* line 348, ../sass/main.scss */
+.images img {
+  display: inline-block;
+  margin-right: 4px;
+}
+/* line 353, ../sass/main.scss */
+.images img:last-of-type {
+  margin-right: 0;
 }

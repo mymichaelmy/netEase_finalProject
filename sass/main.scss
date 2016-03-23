@@ -265,6 +265,16 @@ header
 		background-color:#ffffff;
 		cursor: pointer;
 		margin:0 0.6rem;
+
+		&.current
+		{
+			background-color:#333333;
+		}
+
+		&:hover
+		{
+			background-color:#333333;
+		}
 	}
 }
 
@@ -307,6 +317,7 @@ header
 		width: 8rem;
 		height: 8rem;
 		margin-right:2rem;
+		margin-top: 0.6rem;
 	}
 	h2
 	{
@@ -315,7 +326,7 @@ header
 	}
 	p
 	{
-		width: 17rem;
+		width: 17.2rem;
 		margin-bottom: 5.2rem;
 		font-size: 1.4rem;
 		line-height: 2.4rem;
@@ -323,6 +334,25 @@ header
 		@include respond-to($widewidth)
 		{
 			width: 25rem;
+		}
+	}
+}
+
+/*list of images*/
+.images
+{
+	width:1616px;
+	margin: 0 auto;
+	font-size:0;
+	text-align:center;
+	img
+	{
+		display:inline-block;
+		margin-right:4px;
+
+		&:last-of-type
+		{
+			margin-right:0;
 		}
 	}
 }
