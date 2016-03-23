@@ -37,6 +37,29 @@ $sprites-layout: smart;
 	zoom:1;
 }
 
+@mixin generalshadow
+{
+	@include box-shadow(rgba(6, 0, 1, 0.2) 0px 1px 1px 0px);
+}
+
+@mixin addEllipsis
+{
+	white-space: nowrap;
+	overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+//vertical aligh
+@mixin vertical-pesudo
+{
+	&:before 
+	{
+  		content: "";
+  		display: inline-block;
+  		vertical-align: middle;
+  		height: 100%;
+  	}
+}
 
 // breakpoint
 $smallwidth:960;
@@ -375,6 +398,22 @@ header
 	}
 
 	@include clearfix;
+
+	//icon and span part
+	i
+	{
+		display: inline-block;
+		width: 9px;
+		height:11px;
+		margin-right: 5px;
+		vertical-align: middle;
+	}
+
+	span
+	{
+		font-size: 1rem;
+		vertical-align: middle;
+	}
 }
 
 /*course part*/
@@ -393,10 +432,12 @@ header
 	
 	section
 	{
+		float: left;
+		margin-right: 20px;
 		background-color:#ffffff;
 		width: 225px;
 		font-size: 1.2rem;
-		@include box-shadow(rgba(6, 0, 1, 0.2) 0px 1px 1px 0px);
+		@include generalshadow;
 		
 		img
 		{
@@ -405,6 +446,11 @@ header
 
 		}
 		
+		h2
+		{
+			@include addEllipsis;
+		}
+
 		.class-textWrapper
 		{
 			padding: 0.9rem 0.5rem 1.1rem;
@@ -413,6 +459,7 @@ header
 		{
 			margin: 1rem 0;
 			color: #999999;
+			@include addEllipsis;
 		}
 
 		.class-numberOfStudent
@@ -427,19 +474,7 @@ header
 			border-color:#dddddd;
 			@include border-radius(2px);
 
-			i
-			{
-				display: inline-block;
-				width: 9px;
-				height:11px;
-				margin-right: 5px;
-				vertical-align: middle;
-			}
 
-			span
-			{
-				vertical-align: middle;
-			}
 		}
 
 		.class-price
@@ -463,15 +498,116 @@ header
 		color: #ffffff;
 	}
   
-  	@include box-shadow(rgba(6, 0, 1, 0.2) 0px 1px 1px 0px);
+  	@include generalshadow;
 
 
 }
 
+/* page flip button*/
+.pageFlip
+{
+	clear:both;
+	float:right;
+	margin-right:15px;
+	button
+	{
+		margin: 0 5px;
+		padding:4px 7px;
+		font-size: 1.5rem;
+		color: #666666;
+		vertical-align: middle;
+		
+		&:hover
+		{
+			color: $netGreen;
+		}
+		&.current
+		{
+			color:#ffffff;
+			background-color:#9dd8b1;
+		}
+
+		&.flip
+		{
+			padding:7px 12px;
+			font-size: 8px;
+			background-color:#9dd8b1;
+
+		}		
+		i
+		{
+			width: 8px;
+			height:12px;
+			margin:0;
+			line-height: 1;
+		}
+	}
+}
+
+
 /*end of course*/
 
+/*start of course*/
 aside.recommend
 {
 	float:right;
 	width: 223px;
+
+}
+
+.aside-intro
+{
+	margin-bottom:21px;
+	background-color:#ffffff;
+	@include generalshadow;
+
+	h2
+	{
+		margin-bottom: 11px;
+		padding:20px;
+		border-bottom-style:solid;
+		border-bottom-width:thin;
+		border-color:#dddddd;
+
+	}
+
+	.videoWrapper
+	{
+		padding:20px;
+		font-size: 1.4rem;
+		color: #666666;
+
+		p
+		{
+			margin-bottom: 9px;
+		}
+	}
+}
+
+.aside-hot
+{
+	padding-bottom:20px;
+	section
+	{
+		margin-top:20px;
+		padding: 0 20px;
+		@include clearfix;
+
+	}
+
+	img
+	{
+		display: inline-block;
+		float:left;
+		margin-right: 12px;
+		width: 50px;
+		height:50px;
+	}
+
+	h3
+	{
+		font-size: 1.4rem;
+		@include addEllipsis;
+	}
+	
 }
