@@ -434,6 +434,7 @@ header
 	{
 		float: left;
 		margin-right: 20px;
+		margin-bottom: 25px;
 		background-color:#ffffff;
 		width: 225px;
 		font-size: 1.2rem;
@@ -509,9 +510,10 @@ header
 	clear:both;
 	float:right;
 	margin-right:15px;
+	margin-top:5px;
 	button
 	{
-		margin: 0 5px;
+		margin: 0 4px;
 		padding:4px 7px;
 		font-size: 1.5rem;
 		color: #666666;
@@ -610,4 +612,85 @@ aside.recommend
 		@include addEllipsis;
 	}
 	
+}
+/*footer part*/
+footer
+{
+	background-color:#2c3339;
+	color:#bebfc0;
+	font-size:1.25rem;
+	padding-top:80px;
+	padding-bottom:76px;
+	@include clearfix;
+
+	section
+	{
+		float: left;
+		margin-top: 15px;
+		margin-right: 143px;
+	}
+	&>div
+	{
+		width: $smallwidth+px;
+		margin: 0 auto;
+
+		@include respond-to($widewidth)
+		{
+			width: 1105px;
+		}
+	}
+	i
+	{
+		display: inline-block;
+		width: 7rem;
+		height:2.2rem;
+		// background-position: 0 -20.9px;
+		background-size:80px 318px;
+		vertical-align: middle;
+		margin-right:1.2rem;		
+	}
+
+	h2
+	{
+		display: inline-block;
+		vertical-align: middle;
+		font-size: 2.2rem;
+		color: $netGreen;
+	}
+
+	a
+	{
+		font-size: 1.5rem;
+		&:link, &:visited
+		{
+			color: #bebfc0;
+		}
+	}
+
+	ul
+	{
+		display: block;
+		float:left;
+		line-height: 3rem;
+		margin-right: 96px;
+	
+		i
+		{
+			display: inline-block;
+			margin-left:10px;
+			width:20px;
+			height:16px;
+			background-size:80px 294px;
+		}
+		li
+		{
+
+		}
+	}
+}
+
+.copyright
+{
+	margin-top:2.6rem;
+	line-height:2;
 }
