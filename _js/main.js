@@ -36,22 +36,118 @@ function get(url, options, callback)
 
 }
 
+// functionalities
+function min(num1, num2)
+{
+	if(num1<num2)
+	{
+		return num1;
+	}
+
+	else
+	{
+		return num2;
+	}
+}
+
+//addEvent helper function
+function addEvent(el,event,callback)
+{
+	if('addEventListener' in el)
+	{
+		el.addEventListener(event, callback, false);
+	}
+	else
+	{
+		el['e'+event+callback]=callback;
+		el[event+callback]=function()
+		{
+			el['e'+event+callback](window.event);
+		};
+		el.attachEvent('on'+event,el[event+callback]);
+	}
+}
+
+
+function createpagination(options,totalPage)
+{
+
+	var pageFlip=document.getElementById('pageFlip');
+	var numberOfButton=min(8,totalPage);    //页码按键数
+	var currentPage=parseInt(options.pageNo,10);    //当前页数
+	var buttonleft=document.createElement('button');
+
+    //左翻页
+	buttonleft.innerHTML='<i id="leftArrow" class="sprites-icon-left"></i>';
+	buttonleft.setAttribute('class', 'flip');
+	buttonleft.id='left';
+	pageFlip.appendChild(buttonleft);
+
+
+	var startPage=1;//设定最左端页码按钮
+	if(currentPage>=5&&currentPage<=totalPage-3)
+	{
+		startPage=currentPage-4;
+
+	}
+
+	else if(currentPage<5)
+	{
+		startPage=1;
+	}
+
+	else
+	{
+		startPage=totalPage-7;
+	}
+
+	for(var i=startPage;i<=startPage+numberOfButton-1;i++)
+	{
+		var buttonElement=document.createElement('button');
+		buttonElement.textContent=i;
+		if(i===currentPage)
+		{
+			buttonElement.className='current';
+		}
+
+		addEvent(buttonElement,'click',function(e)
+		{
+			tabOptions.pageNo=e.target.textContent;
+			tabOptions.type=currentTab;
+
+			get(urlCourseList, tabOptions,showCourse);
+		});
+
+		pageFlip.appendChild(buttonElement);
+	}
+
+	//右翻页
+	var buttonright=document.createElement('button');
+
+	buttonright.innerHTML='<i id="rightArrow" class="sprites-icon-right"></i>';
+	buttonright.setAttribute('class', 'flip');
+	buttonright.id='right';
+	pageFlip.appendChild(buttonright);
+}
+
 function showCourse(data,options)
 {
-	var courseList=document.getElementById('courseLoad');
+	var courseLoad=document.getElementById('courseLoad');
+	var pageFlip=document.getElementById('pageFlip');
+
+	courseLoad.innerHTML='';
+	pageFlip.innerHTML='';
+	//每次ajax清除课表和按键内容
+	//
 	data.list.forEach(function(course)
 	{
-		courseList.appendChild(generateCourse(course));
+		courseLoad.appendChild(generateCourse(course));
 	});
 
-	createpagination(data.pagination,data.totalPage);
+	createpagination(options,data.totalPage);
 
 }
 
-function createpagination(pagination,totalPage)
-{
-
-}
 function generateCourse(data)
 {
 	var price='';
@@ -79,6 +175,7 @@ function generateCourse(data)
 	return section;
 }
 
+var currentTab=10;
 var tabOptions={
 	pageNo: 1,
 	psize:20,
