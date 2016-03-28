@@ -257,9 +257,8 @@ header
 	position:relative;
 	height:46rem;
 	width:$smallwidth+px;
-	background-image:image-url("banner1.jpg");
-	background-size: cover;
-	background-position: center;
+	
+
 	font-size:0;
 	text-align:center;
 	
@@ -272,12 +271,42 @@ header
 		width: 100%;
 	}
 
+	.banner
+	{
+		display: block;
+		position:absolute;
+		left:0;
+		right:0;
+		width: 100%;
+		height:100%;
+		background-size: cover;
+		background-position: center;
+
+	}
+
+	#banner1
+	{
+		background-image:image-url("banner1.jpg");
+		z-index: 2;
+	}
+	#banner2
+	{
+		background-image:image-url("banner2.jpg");
+		z-index: 1;
+	}
+	#banner3
+	{
+		background-image:image-url("banner3.jpg");
+		z-index: 1;
+	}
+
 	.pointSet
 	{
 		position: absolute;
 		display: inline-block;
 		bottom: 2rem;
 		text-align: center;
+		z-index: 9;
 	}
 	i
 	{
