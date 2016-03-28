@@ -1,3 +1,4 @@
+//ajax request
 function get(url, options, callback)
 {
 	var optionsArrey=[];
@@ -113,7 +114,7 @@ function createpagination(options,totalPage)
 		addEvent(buttonElement,'click',function(e)
 		{
 			tabOptions.pageNo=e.target.textContent;
-			tabOptions.type=currentTab;
+			// tabOptions.type=currentTab;
 
 			get(urlCourseList, tabOptions,showCourse);
 		});
@@ -166,7 +167,7 @@ function generateCourse(data)
 	html+=' alt="" width="223" height="124" />';
 	html+='<div class="class-textWrapper">';
 	html+='<h2>'+data.name+'</h2>';
-	html+='<div class="class-category">'+data.categoryName+'</div>';
+	html+='<div class="class-category">'+data.provider+'</div>';
 	html+='<div class="class-numberOfStudent"><i class="sprites-icon-profile"></i><span>'+data.learnerCount+'</span></div>';
 	html+='<div class="class-price">'+price+'</div>';
 	html+='</div>';
@@ -175,6 +176,93 @@ function generateCourse(data)
 	return section;
 }
 
+//tab button
+function attachTabEvent()
+{
+	var total=arguments.length;
+	for(var i=1;i<=total;i++)
+	{
+		function attachOne(i, el)
+		{
+			addEvent(el,'click',function(e)
+			{
+				 
+				if(this.className=='courseTab')
+				{
+					tabOptions.type=10*i;
+					tabOptions.pageNo=1;
+					// currentTab=10*i;  //update currentTab
+					get(urlCourseList,tabOptions,showCourse);
+					this.className='courseTab current';
+					if(i===1)
+					{
+						this.nextSibling.className='courseTab';
+					}
+					else
+					{
+						this.previousSibling.className='courseTab';
+					}
+				}
+				
+			});
+		}
+		attachOne (i,arguments[i-1]);        //闭包保存i
+
+
+
+	}
+}
+
+// start of hot courses
+function initHotCourse(data)  //
+{
+	var imgElements=document.querySelectorAll('#hotList img');
+	var h3Elements=document.querySelectorAll('#hotList h3');
+	var spanElements=document.querySelectorAll('#hotList span');
+	for(var i=0; i<10; i++)
+	{
+		imgElements[i].setAttribute('src',data[i].smallPhotoUrl);
+		h3Elements[i].textContent=data[i].name;
+		spanElements[i].textContent=data[i].learnerCount;
+
+	}
+}
+
+function showHotCourse(data)
+{
+	var elements=document.querySelectorAll('#hotList section'); //collect all section elements
+	initHotCourse(data);
+
+	var i=10;
+	setInterval(function()
+	{
+		autoRenew(elements,i,data);
+		i=i<data.length-1?i+1:0;
+		elements=document.querySelectorAll('#hotList section'); //renew collection
+	},5000);
+}
+
+
+function autoRenew(elements,i,data)  //更新函数，5秒更新
+{
+	var list=document.getElementById('hotList');
+	var sectionNode=document.createElement('section');
+
+	var html='';
+	html+='<img src="'+data[i].smallPhotoUrl+'"';
+	html+=' alt="thumbnail" width="50" height="50" />';
+	html+='<h3>'+data[i].name+'</h3>';
+	html+='<div><i class="sprites-icon-profile"></i>';
+	html+='<span>'+data[i].learnerCount+'</span></div>';
+
+	sectionNode.innerHTML=html;
+
+	list.removeChild(elements[0]);
+	list.appendChild(sectionNode);
+
+}
+
+//end of hot courses
 var currentTab=10;
 var tabOptions={
 	pageNo: 1,
@@ -182,9 +270,18 @@ var tabOptions={
 	type:10
 };
 
+
+
+
 var urlCourseList='http://study.163.com/webDev/couresByCategory.htm';
+var urlHotCourse='http://study.163.com/webDev/hotcouresByCategory.htm';
 window.onload=function()
 {
-
+	var tabButton1=document.getElementById('tab1');
+	var tabButton2=document.getElementById('tab2');
+	// var tabButton=document.querySelectorAll('.courseTab');
 	get(urlCourseList, tabOptions,showCourse);
+	attachTabEvent(tabButton1,tabButton2);
+
+	get(urlHotCourse,'', showHotCourse);
 };
