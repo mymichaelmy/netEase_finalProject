@@ -260,7 +260,7 @@ header
 	
 
 	font-size:0;
-	text-align:center;
+	// text-align:center;
 	
 	@include respond-to($smallwidth)
 	{
@@ -304,7 +304,10 @@ header
 	{
 		position: absolute;
 		display: inline-block;
+		width: 100px;
 		bottom: 2rem;
+		left:50%;
+		margin-left: -50px;
 		text-align: center;
 		z-index: 9;
 	}

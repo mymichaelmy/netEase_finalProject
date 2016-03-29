@@ -311,7 +311,6 @@ header nav li a:hover {
   height: 46rem;
   width: 960px;
   font-size: 0;
-  text-align: center;
 }
 @media only screen and (min-width: 960px) {
   /* line 255, ../sass/main.scss */
@@ -355,11 +354,14 @@ header nav li a:hover {
 .slide .pointSet {
   position: absolute;
   display: inline-block;
+  width: 100px;
   bottom: 2rem;
+  left: 50%;
+  margin-left: -50px;
   text-align: center;
   z-index: 9;
 }
-/* line 311, ../sass/main.scss */
+/* line 314, ../sass/main.scss */
 .slide i {
   display: inline-block;
   width: 1rem;
@@ -371,24 +373,24 @@ header nav li a:hover {
   cursor: pointer;
   margin: 0 0.6rem;
 }
-/* line 321, ../sass/main.scss */
+/* line 324, ../sass/main.scss */
 .slide i.current {
   background-color: #333333;
 }
-/* line 326, ../sass/main.scss */
+/* line 329, ../sass/main.scss */
 .slide i:hover {
   background-color: #333333;
 }
 
 /*start of columns*/
-/* line 334, ../sass/main.scss */
+/* line 337, ../sass/main.scss */
 .three-columns {
   width: 960px;
   margin: 6rem auto;
   zoom: 1;
 }
 @media only screen and (min-width: 1205px) {
-  /* line 334, ../sass/main.scss */
+  /* line 337, ../sass/main.scss */
   .three-columns {
     width: 1205px;
   }
@@ -402,24 +404,24 @@ header nav li a:hover {
 .three-columns:after {
   clear: both;
 }
-/* line 345, ../sass/main.scss */
+/* line 348, ../sass/main.scss */
 .three-columns section {
   float: left;
   margin-right: 7rem;
 }
-/* line 350, ../sass/main.scss */
+/* line 353, ../sass/main.scss */
 .three-columns section:last-of-type {
   margin-right: 0;
 }
-/* line 355, ../sass/main.scss */
+/* line 358, ../sass/main.scss */
 .three-columns section div {
   display: inline-block;
 }
-/* line 360, ../sass/main.scss */
+/* line 363, ../sass/main.scss */
 .three-columns section a {
   font-size: 1.4rem;
 }
-/* line 365, ../sass/main.scss */
+/* line 368, ../sass/main.scss */
 .three-columns i {
   display: inline-block;
   float: left;
@@ -428,12 +430,12 @@ header nav li a:hover {
   margin-right: 2rem;
   margin-top: 0.6rem;
 }
-/* line 374, ../sass/main.scss */
+/* line 377, ../sass/main.scss */
 .three-columns h2 {
   font-size: 2.2rem;
   margin-bottom: 2rem;
 }
-/* line 379, ../sass/main.scss */
+/* line 382, ../sass/main.scss */
 .three-columns p {
   width: 17.2rem;
   margin-bottom: 5.2rem;
@@ -442,36 +444,36 @@ header nav li a:hover {
   color: #666666;
 }
 @media only screen and (min-width: 1205px) {
-  /* line 379, ../sass/main.scss */
+  /* line 382, ../sass/main.scss */
   .three-columns p {
     width: 25rem;
   }
 }
 
 /*list of images*/
-/* line 394, ../sass/main.scss */
+/* line 397, ../sass/main.scss */
 .imagesList {
   width: 1616px;
   margin: 0 auto;
   font-size: 0;
   text-align: center;
 }
-/* line 400, ../sass/main.scss */
+/* line 403, ../sass/main.scss */
 .imagesList img {
   display: inline-block;
   margin-right: 4px;
 }
-/* line 405, ../sass/main.scss */
+/* line 408, ../sass/main.scss */
 .imagesList img:last-of-type {
   margin-right: 0;
 }
 
-/* line 413, ../sass/main.scss */
+/* line 416, ../sass/main.scss */
 .ajaxWrapper {
   background-color: #f8f8f8;
 }
 
-/* line 417, ../sass/main.scss */
+/* line 420, ../sass/main.scss */
 .ajaxPart {
   width: 960px;
   margin: 0 auto;
@@ -480,7 +482,7 @@ header nav li a:hover {
   zoom: 1;
 }
 @media only screen and (min-width: 1205px) {
-  /* line 417, ../sass/main.scss */
+  /* line 420, ../sass/main.scss */
   .ajaxPart {
     width: 1205px;
   }
@@ -494,7 +496,7 @@ header nav li a:hover {
 .ajaxPart:after {
   clear: both;
 }
-/* line 432, ../sass/main.scss */
+/* line 435, ../sass/main.scss */
 .ajaxPart i {
   display: inline-block;
   width: 9px;
@@ -502,26 +504,26 @@ header nav li a:hover {
   margin-right: 5px;
   vertical-align: middle;
 }
-/* line 441, ../sass/main.scss */
+/* line 444, ../sass/main.scss */
 .ajaxPart span {
   font-size: 1rem;
   vertical-align: middle;
 }
 
 /*course part*/
-/* line 451, ../sass/main.scss */
+/* line 454, ../sass/main.scss */
 .courseList {
   width: 735px;
   margin-right: 2px;
   float: left;
 }
 @media only screen and (min-width: 1205px) {
-  /* line 451, ../sass/main.scss */
+  /* line 454, ../sass/main.scss */
   .courseList {
     width: 980px;
   }
 }
-/* line 462, ../sass/main.scss */
+/* line 465, ../sass/main.scss */
 .courseList section {
   float: left;
   margin-right: 20px;
@@ -533,22 +535,22 @@ header nav li a:hover {
   -webkit-box-shadow: rgba(6, 0, 1, 0.2) 0px 1px 1px 0px;
   box-shadow: rgba(6, 0, 1, 0.2) 0px 1px 1px 0px;
 }
-/* line 472, ../sass/main.scss */
+/* line 475, ../sass/main.scss */
 .courseList section img {
   width: 223px;
   margin: 1px;
 }
-/* line 479, ../sass/main.scss */
+/* line 482, ../sass/main.scss */
 .courseList section h2 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-/* line 484, ../sass/main.scss */
+/* line 487, ../sass/main.scss */
 .courseList section .class-textWrapper {
   padding: 0.9rem 0.5rem 1.1rem;
 }
-/* line 488, ../sass/main.scss */
+/* line 491, ../sass/main.scss */
 .courseList section .class-category {
   margin: 1rem 0;
   color: #999999;
@@ -556,7 +558,7 @@ header nav li a:hover {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-/* line 495, ../sass/main.scss */
+/* line 498, ../sass/main.scss */
 .courseList section .class-numberOfStudent {
   display: inline-block;
   font-size: 1rem;
@@ -569,12 +571,12 @@ header nav li a:hover {
   -webkit-border-radius: 2px;
   border-radius: 2px;
 }
-/* line 510, ../sass/main.scss */
+/* line 513, ../sass/main.scss */
 .courseList section .class-price {
   color: #ff3f00;
 }
 
-/* line 518, ../sass/main.scss */
+/* line 521, ../sass/main.scss */
 .courseTab {
   font-size: 2rem;
   color: #666666;
@@ -585,21 +587,21 @@ header nav li a:hover {
   -webkit-box-shadow: rgba(6, 0, 1, 0.2) 0px 1px 1px 0px;
   box-shadow: rgba(6, 0, 1, 0.2) 0px 1px 1px 0px;
 }
-/* line 525, ../sass/main.scss */
+/* line 528, ../sass/main.scss */
 .courseTab.current {
   background-color: #39a030;
   color: #ffffff;
 }
 
 /* page flip button*/
-/* line 537, ../sass/main.scss */
+/* line 540, ../sass/main.scss */
 .pageFlip {
   clear: both;
   float: right;
   margin-right: 15px;
   margin-top: 5px;
 }
-/* line 543, ../sass/main.scss */
+/* line 546, ../sass/main.scss */
 .pageFlip button {
   margin: 0 4px;
   padding: 4px 7px;
@@ -607,22 +609,22 @@ header nav li a:hover {
   color: #666666;
   vertical-align: middle;
 }
-/* line 551, ../sass/main.scss */
+/* line 554, ../sass/main.scss */
 .pageFlip button:hover {
   color: #39a030;
 }
-/* line 555, ../sass/main.scss */
+/* line 558, ../sass/main.scss */
 .pageFlip button.current {
   color: #ffffff;
   background-color: #9dd8b1;
 }
-/* line 561, ../sass/main.scss */
+/* line 564, ../sass/main.scss */
 .pageFlip button.flip {
   padding: 7px 12px;
   font-size: 8px;
   background-color: #9dd8b1;
 }
-/* line 568, ../sass/main.scss */
+/* line 571, ../sass/main.scss */
 .pageFlip button i {
   width: 8px;
   height: 12px;
@@ -632,13 +634,13 @@ header nav li a:hover {
 
 /*end of course*/
 /*start of course*/
-/* line 582, ../sass/main.scss */
+/* line 585, ../sass/main.scss */
 aside.recommend {
   float: right;
   width: 223px;
 }
 
-/* line 589, ../sass/main.scss */
+/* line 592, ../sass/main.scss */
 .aside-intro {
   margin-bottom: 21px;
   background-color: #ffffff;
@@ -646,7 +648,7 @@ aside.recommend {
   -webkit-box-shadow: rgba(6, 0, 1, 0.2) 0px 1px 1px 0px;
   box-shadow: rgba(6, 0, 1, 0.2) 0px 1px 1px 0px;
 }
-/* line 595, ../sass/main.scss */
+/* line 598, ../sass/main.scss */
 .aside-intro h2 {
   margin-bottom: 11px;
   padding: 20px;
@@ -654,22 +656,22 @@ aside.recommend {
   border-bottom-width: thin;
   border-color: #dddddd;
 }
-/* line 605, ../sass/main.scss */
+/* line 608, ../sass/main.scss */
 .aside-intro .videoWrapper {
   padding: 20px;
   font-size: 1.4rem;
   color: #666666;
 }
-/* line 611, ../sass/main.scss */
+/* line 614, ../sass/main.scss */
 .aside-intro .videoWrapper p {
   margin-bottom: 9px;
 }
 
-/* line 618, ../sass/main.scss */
+/* line 621, ../sass/main.scss */
 .aside-hot {
   padding-bottom: 20px;
 }
-/* line 621, ../sass/main.scss */
+/* line 624, ../sass/main.scss */
 .aside-hot section {
   margin-top: 20px;
   padding: 0 20px;
@@ -684,7 +686,7 @@ aside.recommend {
 .aside-hot section:after {
   clear: both;
 }
-/* line 629, ../sass/main.scss */
+/* line 632, ../sass/main.scss */
 .aside-hot img {
   display: inline-block;
   float: left;
@@ -692,7 +694,7 @@ aside.recommend {
   width: 50px;
   height: 50px;
 }
-/* line 638, ../sass/main.scss */
+/* line 641, ../sass/main.scss */
 .aside-hot h3 {
   font-size: 1.4rem;
   white-space: nowrap;
@@ -701,7 +703,7 @@ aside.recommend {
 }
 
 /*footer part*/
-/* line 646, ../sass/main.scss */
+/* line 649, ../sass/main.scss */
 footer {
   background-color: #2c3339;
   color: #bebfc0;
@@ -719,24 +721,24 @@ footer:before, footer:after {
 footer:after {
   clear: both;
 }
-/* line 655, ../sass/main.scss */
+/* line 658, ../sass/main.scss */
 footer section {
   float: left;
   margin-top: 15px;
   margin-right: 143px;
 }
-/* line 661, ../sass/main.scss */
+/* line 664, ../sass/main.scss */
 footer > div {
   width: 960px;
   margin: 0 auto;
 }
 @media only screen and (min-width: 1205px) {
-  /* line 661, ../sass/main.scss */
+  /* line 664, ../sass/main.scss */
   footer > div {
     width: 1105px;
   }
 }
-/* line 671, ../sass/main.scss */
+/* line 674, ../sass/main.scss */
 footer i {
   display: inline-block;
   width: 7rem;
@@ -745,29 +747,29 @@ footer i {
   vertical-align: middle;
   margin-right: 1.2rem;
 }
-/* line 682, ../sass/main.scss */
+/* line 685, ../sass/main.scss */
 footer h2 {
   display: inline-block;
   vertical-align: middle;
   font-size: 2.2rem;
   color: #39a030;
 }
-/* line 690, ../sass/main.scss */
+/* line 693, ../sass/main.scss */
 footer a {
   font-size: 1.5rem;
 }
-/* line 693, ../sass/main.scss */
+/* line 696, ../sass/main.scss */
 footer a:link, footer a:visited {
   color: #bebfc0;
 }
-/* line 699, ../sass/main.scss */
+/* line 702, ../sass/main.scss */
 footer ul {
   display: block;
   float: left;
   line-height: 3rem;
   margin-right: 96px;
 }
-/* line 706, ../sass/main.scss */
+/* line 709, ../sass/main.scss */
 footer ul i {
   display: inline-block;
   margin-left: 10px;
@@ -776,7 +778,7 @@ footer ul i {
   background-size: 80px 294px;
 }
 
-/* line 721, ../sass/main.scss */
+/* line 724, ../sass/main.scss */
 .copyright {
   margin-top: 2.6rem;
   line-height: 2;

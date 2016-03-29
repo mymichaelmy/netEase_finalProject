@@ -263,6 +263,83 @@ function autoRenew(elements,i,data)  //更新函数，5秒更新
 }
 
 //end of hot courses
+
+
+//start of slidechange
+
+function initSlide()
+{
+	var slide=document.getElementById('slide');
+	var banners=document.querySelectorAll('.slide .banner');
+	var buttons=document.querySelectorAll('.pointSet i');
+	var currentImgIndex=0;
+	var duration=5000;
+
+	var repeatFunction= setInterval(oneTime,duration);
+
+	function oneTime()
+	{
+		var toNum=(currentImgIndex==2)?0:currentImgIndex+1;
+		changeImage(currentImgIndex,toNum,banners,buttons);
+		banners[currentImgIndex].className='banner';
+		banners[toNum].className='banner current';
+		buttons[currentImgIndex].className='';
+		buttons[toNum].className='current';
+
+		currentImgIndex=toNum;
+	}
+
+	addEvent(slide,'mouseenter',function()
+	{
+		clearInterval(repeatFunction);
+	});
+	addEvent(slide,'mouseleave',function()
+	{
+		repeatFunction=setInterval(oneTime,duration);
+	});
+}
+
+
+function changeImage(from,to,banners,buttons)
+{
+	// var buttons=document.querySelectorAll('.pointSet i');
+	var fromImg=banners[from];
+	var toImg=banners[to];
+	var opacityCount=0;
+
+	toImg.style.display='block';
+	toImg.style.opacity=0;
+	toImg.style.filter = 'alpha(opacity:0)';
+	toImg.style.zIndex=3;
+	
+
+	var graduallyChange=setInterval(function()
+	{
+		if(opacityCount<10)
+		{
+			opacityCount+=2;
+			toImg.style.opacity=opacityCount*0.1;
+			toImg.style.filter = 'alpha(opacity:'+opacityCount*10+')';
+
+		}
+
+		else
+		{
+			clearInterval(graduallyChange);
+			toImg.style.zIndex=2;
+			fromImg.style.zIndex=1;
+			fromImg.display='none';
+		}
+	},100);     //渐变函数
+	// if(buttons[to].class!=='current')
+	// {
+
+	// }
+}
+//end of slidechange
+
+
+
 var currentTab=10;
 var tabOptions={
 	pageNo: 1,
@@ -284,4 +361,5 @@ window.onload=function()
 	attachTabEvent(tabButton1,tabButton2);
 
 	get(urlHotCourse,'', showHotCourse);
+	initSlide();
 };
