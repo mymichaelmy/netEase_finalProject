@@ -208,8 +208,6 @@ function attachTabEvent()
 		}
 		attachOne (i,arguments[i-1]);        //闭包保存i
 
-
-
 	}
 }
 
@@ -277,14 +275,18 @@ function initSlide()
 
 	var repeatFunction= setInterval(oneTime,duration);
 
+	function updateButtonAndBanner(from,to) //更新current
+	{
+		banners[from].className='banner';
+		banners[to].className='banner current';
+		buttons[from].className='';
+		buttons[to].className='current';
+	}
 	function oneTime()
 	{
 		var toNum=(currentImgIndex==2)?0:currentImgIndex+1;
-		changeImage(currentImgIndex,toNum,banners,buttons);
-		banners[currentImgIndex].className='banner';
-		banners[toNum].className='banner current';
-		buttons[currentImgIndex].className='';
-		buttons[toNum].className='current';
+		changeImage(currentImgIndex,toNum,banners);
+		updateButtonAndBanner(currentImgIndex,toNum);
 
 		currentImgIndex=toNum;
 	}
@@ -297,10 +299,33 @@ function initSlide()
 	{
 		repeatFunction=setInterval(oneTime,duration);
 	});
+
+	//attach button event
+	for(var i=0;i<buttons.length;i++)
+	{
+		function attachOneButton(i,button)
+		{
+			addEvent(button,'click',function(e)
+			{
+				var toNum=i;
+				if(button.className!=='current')
+				{
+					clearInterval(repeatFunction);
+			
+					changeImage(currentImgIndex,toNum,banners);
+					updateButtonAndBanner(currentImgIndex,toNum);
+					currentImgIndex=toNum;
+				}
+			});
+
+		}
+		attachOneButton(i,buttons[i]);
+	}
+	
 }
 
 
-function changeImage(from,to,banners,buttons)
+function changeImage(from,to,banners)
 {
 	// var buttons=document.querySelectorAll('.pointSet i');
 	var fromImg=banners[from];
