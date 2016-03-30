@@ -6,19 +6,19 @@
 	<link rel="stylesheet" type="text/css" href="_css/main.css" />
 </head>
 <body>
-	<div class="reminder">
+	<div class="reminder" id="reminder">
 		<div>
 		<p>网易云课堂微专业，帮助你掌握专业技能，令你求职或加薪多一份独特优势！
 		<a href="">立即查看></a>
 		</p>
-		<button><i class="sprites-icon-cross1"></i>不再提醒</button>
+		<button id="reminderCross"><i class="sprites-icon-cross1"></i>不再提醒</button>
 		</div>
 	</div>
 	
 	<header>
 		<i class="sprites-logo-ETU"></i>
 		<h1>网易教育产品部</h1>
-		<button><i class="sprites-icon-add"></i>关注</button>
+		<button class="toFollow"><i class="sprites-icon-add"></i><span>关注</span><a href="">取消</a></button>
 		<p>粉丝 45</p>
 		
 		<nav>
@@ -212,6 +212,21 @@
 			</ul>
 		</div>
 	</footer>
+	<div id="loginWrapper">
+		<div class="loginSquare">
+			<form id="login" action="http://study.163.com/webDev/login.htm" method="get">
+				<fieldset>
+					<legend>登陆网易云课堂</legend>
+					<input type="text" id="username" name="username" placeholder="账号" /><br />
+					<input type="password" id="password" name="password" placeholder="密码" /><br />
+					<!-- <button type="submit" id="submit">登陆</button> -->
+					<input type="submit" id="submit1" value="登 陆" />
+				</fieldset>
+				
+			</form>
+			<i class="sprites-icon-cross2"></i>
+		</div>
+	</div>
 	<script type="text/javascript" src="_js/main.js"></script>
 </body>
 </html>

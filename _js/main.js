@@ -37,6 +37,7 @@ function get(url, options, callback)
 
 }
 
+/*  utility   */
 // functionalities
 function min(num1, num2)
 {
@@ -69,6 +70,57 @@ function addEvent(el,event,callback)
 	}
 }
 
+//setCookie
+function setCookie(name,value,path,domain,secure,expire)
+{
+	var cookie=encodeURIComponent(name)+'='+encodeURIComponent(value);
+
+	if(expire)
+	{
+		cookie+='; expires='+expires.toGMTString();
+	}
+
+	if(path)
+	{
+		cookie+='; path='+path;
+
+	}
+	if(domain)
+	{
+		cookie+='; domain='+domain;
+
+	}
+	if(secure)
+	{
+		cookie+='; secure='+secure;
+	}
+
+	document.cookie=cookie;
+}
+
+function getCookie(name)
+{
+	var namestring=name+'=';
+
+	var arreyOfCookie=document.cookie.split('&');
+	for(var i=0;i<arreyOfCookie.length;i++)
+	{
+		while(arreyOfCookie[i].charAt(0)==' ')
+		{
+			arreyOfCookie[i]=arreyOfCookie[i].substring(1);
+		}
+
+		if(arreyOfCookie[i].indexOf(namestring)===0)
+		{
+			console.log(arreyOfCookie[i].substring(name.length+1));
+			return arreyOfCookie[i].substring(name.length+1);
+		}
+
+		return '';
+	}
+}
+
+/* end of utility*/
 
 function createpagination(options,totalPage)
 {
@@ -319,7 +371,7 @@ function initSlide()
 			});
 
 		}
-		attachOneButton(i,buttons[i]);
+		attachOneButton(i,buttons[i]);    //闭包
 	}
 	
 }
@@ -363,7 +415,24 @@ function changeImage(from,to,banners)
 }
 //end of slidechange
 
+function notificationBarInit()
+{
+	var cookie=getCookie('noNotification');
+	var reminder=document.getElementById('reminder');
+	if(cookie=='true')
+	{
+		
+		reminder.style.display='none';
+	}
 
+	var cross=document.getElementById('reminderCross');
+	addEvent(cross,'click',function(e)
+	{
+		setCookie('noNotification',true,'/','');
+		reminder.style.display='none';
+	});
+}
+//notification
 
 var currentTab=10;
 var tabOptions={
@@ -387,4 +456,5 @@ window.onload=function()
 
 	get(urlHotCourse,'', showHotCourse);
 	initSlide();
+	notificationBarInit(); //通知条
 };
