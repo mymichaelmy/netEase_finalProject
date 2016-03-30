@@ -102,7 +102,7 @@ function getCookie(name)
 {
 	var namestring=name+'=';
 
-	var arreyOfCookie=document.cookie.split('&');
+	var arreyOfCookie=document.cookie.split(';');
 	for(var i=0;i<arreyOfCookie.length;i++)
 	{
 		while(arreyOfCookie[i].charAt(0)==' ')
@@ -112,12 +112,13 @@ function getCookie(name)
 
 		if(arreyOfCookie[i].indexOf(namestring)===0)
 		{
-			console.log(arreyOfCookie[i].substring(name.length+1));
-			return arreyOfCookie[i].substring(name.length+1);
+			console.log(arreyOfCookie[i].substring(namestring.length,arreyOfCookie[i].length));
+			return arreyOfCookie[i].substring(namestring.length,arreyOfCookie[i].length);
 		}
 
-		return '';
+		
 	}
+	return '';
 }
 
 /* end of utility*/
@@ -165,7 +166,7 @@ function createpagination(options,totalPage)
 
 		addEvent(buttonElement,'click',function(e)
 		{
-			tabOptions.pageNo=e.target.textContent;
+			tabOptions.pageNo=this.textContent;
 			// tabOptions.type=currentTab;
 
 			get(urlCourseList, tabOptions,showCourse);
@@ -215,8 +216,8 @@ function generateCourse(data)
 
 	var section=document.createElement('section');
 	var html='';
-	html+='<img src="'+data.middlePhotoUrl+'"';
-	html+=' alt="" width="223" height="124" />';
+	html+='<a href=""><img src="'+data.middlePhotoUrl+'"';
+	html+=' alt="" width="223" height="124" /></a>';
 	html+='<div class="class-textWrapper">';
 	html+='<h2>'+data.name+'</h2>';
 	html+='<div class="class-category">'+data.provider+'</div>';
@@ -415,6 +416,7 @@ function changeImage(from,to,banners)
 }
 //end of slidechange
 
+//start if notification
 function notificationBarInit()
 {
 	var cookie=getCookie('noNotification');
@@ -432,7 +434,147 @@ function notificationBarInit()
 		reminder.style.display='none';
 	});
 }
-//notification
+//end of notification
+
+function initFollow()
+{
+	var followButton=document.getElementById('followButton');
+	var cancelFollow=followButton.querySelector('a');
+
+	var followCookie=getCookie('followSuc');
+	var loginCookie=getCookie('loginSuc');
+
+
+	if(followCookie=='true'&&loginCookie=='true')
+	{
+		followButton.className='followed';
+	}
+	addEvent(followButton,'click',function(e)
+	{
+		if(this.className=='toFollow')
+		{
+			
+
+			if(!loginCookie)
+			{
+				initLogin();
+			}
+
+			else
+			{
+				toFollow(followButton);
+			}
+		}
+
+		else
+		{
+			followButton.className='toFollow'; // //用于在取消关注后撤销
+		}
+		
+	});
+
+	addEvent(cancelFollow,'click',function(e)
+	{
+		preventDefault(e);
+		setCookie('followSuc',false,'/','');
+		// followButton.className='toFollow'; 
+		// 此处不修改class, 因为button的click也会触发，在button内判断之后修改
+		// 
+	});
+}
+
+function toFollow(button)
+{
+	button.className='followed';
+	setCookie('followSuc',true,'/','');
+}
+
+//初始化登录
+function initLogin()
+{
+	var loginWrapper=document.getElementById('loginWrapper');
+	var quit=loginWrapper.querySelector('i');
+	var submit=document.getElementById('submit1');
+	var form=document.getElementById('login');
+	var loginUrl='http://study.163.com/webDev/login.htm';
+
+	loginWrapper.style.display='block';
+
+	addEvent(quit,'click',function(e)
+	{
+		loginWrapper.style.display='none';
+	});
+
+	addEvent(login,'submit',function(e)
+	{
+		preventDefault(e);
+		var username=form.elements.username;
+		var password=form.elements.password;
+
+		options={userName:md5(username.value),password:md5(password.value)};
+
+		get(loginUrl, options, function(data,options)
+		{
+			if(data===1)
+			{
+				loginWrapper.style.display='none';
+				setCookie('loginSuc',true,'/','');
+
+				var followUrl='http://study.163.com/webDev/attention.htm';
+				get(followUrl,'',function(data)
+				{
+					if(data)
+					{
+						console.log('hasFollowed');
+						var followButton=document.getElementById('followButton');
+						toFollow(followButton);
+					}
+				});
+			}
+			else
+			{
+				var alert=document.getElementById('alert');
+				alert.style.display='block';
+			}
+		});
+	});
+}
+
+//阻止默认事件
+function preventDefault(e)
+{
+	if(e.preventDefault)
+	{
+		e.preventDefault();
+	}
+	else
+	{
+		e.returnValue=false;
+	}
+}
+
+//init video
+function initVideo()
+{
+	var videoWrapper=document.getElementById('videoWrapper');
+	var quit=videoWrapper.querySelector('i');
+	var link=document.querySelector('.aside-intro a');
+	var video=videoWrapper.querySelector('video');
+
+	
+
+	addEvent(quit,'click',function(e)
+	{
+		videoWrapper.style.display='none';
+	});
+
+	addEvent(link,'click',function(e)
+	{
+		preventDefault(e);
+		video.setAttribute('src',videoLink);
+		videoWrapper.style.display='block';
+	});
+}
 
 var currentTab=10;
 var tabOptions={
@@ -446,6 +588,7 @@ var tabOptions={
 
 var urlCourseList='http://study.163.com/webDev/couresByCategory.htm';
 var urlHotCourse='http://study.163.com/webDev/hotcouresByCategory.htm';
+var videoLink='http://mov.bn.netease.com/open-movie/nos/mp4/2014/12/30/SADQ86F5S_shd.mp4';
 window.onload=function()
 {
 	var tabButton1=document.getElementById('tab1');
@@ -457,4 +600,6 @@ window.onload=function()
 	get(urlHotCourse,'', showHotCourse);
 	initSlide();
 	notificationBarInit(); //通知条
+	initFollow();//启动关注功能
+	initVideo();//初始化视频
 };

@@ -18,14 +18,14 @@
 	<header>
 		<i class="sprites-logo-ETU"></i>
 		<h1>网易教育产品部</h1>
-		<button class="toFollow"><i class="sprites-icon-add"></i><span>关注</span><a href="">取消</a></button>
+		<button class="toFollow" id="followButton"><i class="sprites-icon-add"></i><span>关注</span><a href="">取消</a></button>
 		<p>粉丝 45</p>
 		
 		<nav>
 			<ul>
-				<li><a href="">网易公开课</a></li>
-				<li><a href="">云课堂</a></li>
-				<li><a href="">中国大学MOOC</a></li>
+				<li><a href="http://open.163.com/" target="_blank">网易公开课</a></li>
+				<li><a href="http://study.163.com/" target="_blank">云课堂</a></li>
+				<li><a href="http://www.icourse163.org/" target="_blank">中国大学MOOC</a></li>
 				<a href=""><i class="sprites-icon-zoom"></i></a>
 			</ul>
 		</nav>
@@ -129,52 +129,72 @@
 					<h2>最热排行</h2>
 					<div id="hotList">
 						<section>
+							<a href="" >
 							<img src="_images/image-play.jpg" alt="thumbnail" width="50" height="50" />
+							</a>
 							<h3>课程名</h3>
 							<div><i class="sprites-icon-profile"></i><span>21567</span></div>
 						</section>
 						<section>
+							<a href="" >
 							<img src="_images/image-play.jpg" alt="thumbnail" width="50" height="50" />
+							</a>
 							<h3>课程名</h3>
 							<div><i class="sprites-icon-profile"></i><span>21567</span></div>
 						</section>
 						<section>
+							<a href="" >
 							<img src="_images/image-play.jpg" alt="thumbnail" width="50" height="50" />
+							</a>
 							<h3>课程名</h3>
 							<div><i class="sprites-icon-profile"></i><span>21567</span></div>
 						</section>
 						<section>
+							<a href="" >
 							<img src="_images/image-play.jpg" alt="thumbnail" width="50" height="50" />
+							</a>
 							<h3>课程名</h3>
 							<div><i class="sprites-icon-profile"></i><span>21567</span></div>
 						</section>
 						<section>
+							<a href="" >
 							<img src="_images/image-play.jpg" alt="thumbnail" width="50" height="50" />
+							</a>
 							<h3>课程名</h3>
 							<div><i class="sprites-icon-profile"></i><span>21567</span></div>
 						</section>
 						<section>
+							<a href="" >
 							<img src="_images/image-play.jpg" alt="thumbnail" width="50" height="50" />
+							</a>
 							<h3>课程名</h3>
 							<div><i class="sprites-icon-profile"></i><span>21567</span></div>
 						</section>
 						<section>
+							<a href="" >
 							<img src="_images/image-play.jpg" alt="thumbnail" width="50" height="50" />
+							</a>
 							<h3>课程名</h3>
 							<div><i class="sprites-icon-profile"></i><span>21567</span></div>
 						</section>
 						<section>
+							<a href="" >
 							<img src="_images/image-play.jpg" alt="thumbnail" width="50" height="50" />
+							</a>
 							<h3>课程名</h3>
 							<div><i class="sprites-icon-profile"></i><span>21567</span></div>
 						</section>
 						<section>
+							<a href="" >
 							<img src="_images/image-play.jpg" alt="thumbnail" width="50" height="50" />
+							</a>
 							<h3>课程名</h3>
 							<div><i class="sprites-icon-profile"></i><span>21567</span></div>
 						</section>
 						<section>
+							<a href="" >
 							<img src="_images/image-play.jpg" alt="thumbnail" width="50" height="50" />
+							</a>
 							<h3>课程名</h3>
 							<div><i class="sprites-icon-profile"></i><span>21567</span></div>
 						</section>
@@ -221,12 +241,24 @@
 					<input type="password" id="password" name="password" placeholder="密码" /><br />
 					<!-- <button type="submit" id="submit">登陆</button> -->
 					<input type="submit" id="submit1" value="登 陆" />
+					<div id="alert" style="display:none">用户名或密码错误</div>
 				</fieldset>
 				
 			</form>
 			<i class="sprites-icon-cross2"></i>
 		</div>
 	</div>
+	<div id="videoWrapper">
+		<div class="videoSquare" >
+			<h2>请观看下面的视频</h2>
+			<video width="888" height="538" controls >
+				<source src="" type="video/mp4">
+			您的浏览器不支持最新的视频版本
+			</video>
+			<i class="sprites-icon-cross2"></i>
+		</div>
+	</div>
+	<script type="text/javascript" src="_js/md5.js"></script>
 	<script type="text/javascript" src="_js/main.js"></script>
 </body>
 </html>
